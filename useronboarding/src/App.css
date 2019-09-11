@@ -31,3 +31,14 @@
     transform: rotate(360deg);
   }
 }
+
+.user-form {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  max-width: 60%; 
+  margin: 0 auto; 
+  border: 2px solid red; 
+  border-radius: 4px; 
+  padding: 10px 10px 15px;
+}
