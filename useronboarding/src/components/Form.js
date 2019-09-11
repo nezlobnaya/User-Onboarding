@@ -1,17 +1,17 @@
-import React from 'react';
+import React, { useState,useEffect } from 'react';
 import '../App.css';
 import axios from 'axios';
 import {Form, Field, withFormik } from 'formik';
 import * as yup from 'yup';
 
-const UserForm = ({ errors, touched, values }) => {
-    // const [users, setUsers] = useState([]);
-    // console.log('this is touched', touched);
-    // useEffect(() => {
-    //     if (window.status) {
-    //         setUsers([...users, window.status]);
-    //     }
-    // }, [users]);
+const UserForm = ({ errors, touched, values, status }) => {
+    const [users, setUsers] = useState([]);
+    console.log('this is touched', touched);
+    useEffect(() => {
+        if (status) {
+            setUsers([...users, status]);
+        }
+    }, [status] );
 
     return ( 
         <div className='user-form'>
@@ -34,7 +34,6 @@ const UserForm = ({ errors, touched, values }) => {
             {touched.password && errors.password && (
                 <p className='error'>{errors.password}</p>
             )}
-            <textarea>Terms of Service</textarea>
             <label className='checkbox-container'>
                 I accept & agree to the Terms of Service
             <Field 
@@ -51,14 +50,15 @@ const UserForm = ({ errors, touched, values }) => {
             </label>
             <button type='submit'>Submit</button>
          </Form>
-
-         {/* {users.map(user => (
+         <div className='user-list'>
+            {users.map(user => (
              <ul key={user.id}>
                  <li>Name: {user.name}</li>
                  <li>Email: {user.email}</li>
                  <li>Password: {user.password}</li>
              </ul>
-         ))} */}
+            ))}
+         </div>
         </div>
      );
 }
