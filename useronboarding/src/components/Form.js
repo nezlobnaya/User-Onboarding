@@ -11,6 +11,7 @@ const UserForm = ({ errors, touched, values, status }) => {
         if (status) {
             setUsers([...users, status]);
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [status] );
 
     return ( 
@@ -35,7 +36,7 @@ const UserForm = ({ errors, touched, values, status }) => {
                 <p className='error'>{errors.password}</p>
             )}
             <label className='checkbox-container'>
-                I accept & agree to the Terms of Service
+                <h3>I accept & agree to the Terms of Service</h3>
             <Field 
                 type='checkbox'
                 name='checkbox'

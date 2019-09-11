@@ -2,43 +2,76 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 
 .user-form {
   display: flex;
   justify-content: center;
   align-content: center;
-  max-width: 60%; 
+  flex-wrap: wrap;
+  max-width: 50%; 
   margin: 0 auto; 
   border: 2px solid red; 
   border-radius: 4px; 
   padding: 10px 10px 15px;
 }
+
+.user-list {
+  display: flex;
+  flex-direction: column;
+}
+
+ul {
+  list-style-type: none;
+}
+
+button {
+  border: 1px dotted rgb(97, 93, 93);
+    border-radius: 10px;
+    font-family : inherit;
+    font-size   : 100%;
+    padding      : 5px 10px 5px 5px;
+    font         : bold .6em sans-serif;
+    border       : 2px solid #333;
+    border-radius: 5px;
+    background   : none;
+    cursor       : pointer;
+    -webkit-appearance: none;
+   -webkit-transform: rotate(-1.5deg);
+    -moz-transform: rotate(-1.5deg);
+    -ms-transform: rotate(-1.5deg);
+    -o-transform: rotate(-1.5deg);
+    transform: rotate(-1.5deg);
+  }
+
+  button:after {
+    content: " >>>";
+  }
+  
+  button:hover,
+  button:focus {
+    outline   : none;
+    background: #000;
+    color   : #FFF;
+  }
+  
+  input {
+    border: 5px solid rgb(100, 88, 88); 
+    -webkit-box-shadow: 
+      inset 0 0 10px  rgba(0,0,0,0.1),
+            0 0 16px rgba(0,0,0,0.1); 
+    -moz-box-shadow: 
+      inset 0 0 10px  rgba(0,0,0,0.1),
+            0 0 16px rgba(0,0,0,0.1); 
+    box-shadow: 
+      inset 0 0 10px  rgba(0,0,0,0.1),
+            0 0 16px rgba(0,0,0,0.1); 
+    padding: 15px;
+    background: rgba(246, 235, 235, 0.5);
+    margin: 0 0 10px 0;
+}
+
+  label {
+    padding: 10px 10px;
+  }
+ 
+  
