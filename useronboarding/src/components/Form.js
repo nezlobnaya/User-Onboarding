@@ -77,7 +77,7 @@ const UserForm = ({ errors, touched, values, status }) => {
         name: yup.string().required('Fill out all fields!'),
         email: yup.string().email('Email not valid').required(),
         password: yup.string().min(6, 'password must be at least 6 characters long').required(),
-        checkbox: yup.boolean().required()
+        checkbox: yup.boolean().oneOf([true], 'Must accept the Terms')
     }),
 
     handleSubmit(values, { setStatus }) {
