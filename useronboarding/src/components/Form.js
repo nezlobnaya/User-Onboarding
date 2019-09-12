@@ -18,19 +18,19 @@ const UserForm = ({ errors, touched, values, status }) => {
         <div className='user-form'>
          <Form>
             <h1>Fill out the User Form!</h1>
-            <Field name='name' type='text' placeholder='name' />
+            <Field name='name' type='text' placeholder='Name' />
 
             {touched.name && errors.name && (
                 <p className='error'>{errors.name}</p>
             )}
 
-            <Field name='email' type='email' placeholder='email' />
+            <Field name='email' type='email' placeholder='Email' />
 
             {touched.email && errors.email && (
                 <p className='error'>{errors.email}</p>
             )}
 
-            <Field name='password' type='password' placeholder='password' />
+            <Field name='password' type='password' placeholder='Password' />
 
             {touched.password && errors.password && (
                 <p className='error'>{errors.password}</p>
@@ -65,19 +65,19 @@ const UserForm = ({ errors, touched, values, status }) => {
 }
  const FormikUserForm = withFormik({
 
-    mapPropsToValues({ name, email, password, textarea, checkbox }) {
+    mapPropsToValues: ( values ) => {
         return {
-            name: name || '',
-            email: email || '',
-            password: password || '',
-            checkbox: checkbox || false
+            name: values.name || '',
+            email: values.email || '',
+            password: values.password || '',
+            checkbox: values.checkbox || false
         };
     },
     validationSchema: yup.object().shape({
         name: yup.string().required('Fill out all fields!'),
         email: yup.string().email('Email not valid').required(),
         password: yup.string().min(6, 'password must be at least 6 characters long').required(),
-        checkbox: yup.string().required()
+        checkbox: yup.boolean().required()
     }),
 
     handleSubmit(values, { setStatus }) {
