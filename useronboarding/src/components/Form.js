@@ -36,7 +36,7 @@ const UserForm = ({ errors, touched, values, status }) => {
                 <p className='error'>{errors.password}</p>
             )}
             <label className='checkbox-container'>
-                <h3>I accept & agree to the Terms of Service</h3>
+                <h3>I accept & agree to the Terms of Service.</h3>
             <Field 
                 type='checkbox'
                 name='checkbox'
